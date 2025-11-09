@@ -10,12 +10,13 @@ export default [
       "curly": ["error", "all"],
       "prefer-const": "error"
     },
-    languageOptions: {
+   languageOptions: {
+      globals: {
+        process: "readonly",
+        console: "readonly"
+      },
       ecmaVersion: "latest",
       sourceType: "module"
-    },
-    linterOptions: {
-      reportUnusedDisableDirectives: "error"
     }
   }
 ];
