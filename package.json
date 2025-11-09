@@ -1,0 +1,38 @@
+{
+  "name": "quotely",
+  "version": "24.11.2",
+  "description": "A backend-only project built with Express.js + MongoDB + OpenAI API that manages user-generated content (quotes, posts, articles) and uses AI to auto-tag, summarize, and recommend related content.",
+  "keywords": [
+    "AI-Backend",
+    "Intigration",
+    "javascript"
+  ],
+  "homepage": "https://github.com/ZENXEIO/Quotely-AI-Powered-Content-Recommendation-Backend#readme",
+  "bugs": {
+    "url": "https://github.com/ZENXEIO/Quotely-AI-Powered-Content-Recommendation-Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZENXEIO/Quotely-AI-Powered-Content-Recommendation-Backend.git"
+  },
+  "license": "ISC",
+  "author": "Kumar Abhinav",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.3"
+  }
+}
