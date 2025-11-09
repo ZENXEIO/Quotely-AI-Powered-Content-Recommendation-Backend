@@ -1,0 +1,53 @@
+name: CI - Strict Lint & Deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint check
+        run: npm run lint
+
+      - name: Fail if uncommitted changes exist
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Found uncommitted files after linting. Please commit formatted code."
+            exit 1
+          fi
+
+      - name: Verify .env.example exists
+        run: |
+          if [ ! -f ".env.example" ]; then
+            echo "Missing .env.example file. Add sample env file for contributors."
+            exit 1
+          fi
+
+      - name: Check code formatting
+        run: npx prettier --check .
+
+      - name: Echo CI success
+        run: echo "All checks passed! Ready for deployment."
+deploy:
+    needs: build-and-lint
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Trigger Render Deploy
+        # run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
