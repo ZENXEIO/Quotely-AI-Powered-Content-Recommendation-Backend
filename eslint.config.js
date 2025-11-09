@@ -5,23 +5,23 @@ export default [
       sourceType: "module",
       globals: {
         process: "readonly",
-        console: "readonly"
-      }
+        console: "readonly",
+      },
     },
     rules: {
       // Basic good practices
-      "eqeqeq": "warn",
+      eqeqeq: "warn",
       "prefer-const": "warn",
-      "curly": "warn",
+      curly: "warn",
 
       // Style preferences
-      "semi": ["warn", "always"],
-      "quotes": ["warn", "double"],
+      semi: ["warn", "always"],
+      quotes: ["warn", "double"],
 
       // Developer convenience
       "no-unused-vars": "off",
       "no-undef": "off",
-      "no-console": "off"
-    }
-  }
+      "no-console": "off",
+    },
+  },
 ];

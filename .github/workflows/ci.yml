@@ -37,5 +37,3 @@ jobs:
 
       - name: Echo CI success
         run: echo "All checks passed! Ready for deployment."
-
-        

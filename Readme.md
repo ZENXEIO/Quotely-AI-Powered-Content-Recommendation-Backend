@@ -8,18 +8,23 @@ Future updates will include AI-powered features like auto-tagging, summarization
 ## Setup
 
 1. Clone the repository
+
    ```bash
    git clone https://github.com/<your-username>/quotely-backend.git
    cd quotely-backend
 
+   ```
+
 2. Install dependencies
-  ```bash
-  npm install
+
+````bash
+npm install
 
 3. Start the development server on
-   ```bash
-   npm run dev
+ ```bash
+ npm run dev
 
 4. Run ESLint check
-  ```bash
-  npm run test
+```bash
+npm run test
+````
