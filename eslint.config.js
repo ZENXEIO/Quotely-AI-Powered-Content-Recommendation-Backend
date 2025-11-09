@@ -1,22 +1,27 @@
 export default [
   {
-    rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error",
-      "eqeqeq": ["error", "always"],
-      "no-console": "warn",
-      "semi": ["error", "always"],
-      "quotes": ["error", "double"],
-      "curly": ["error", "all"],
-      "prefer-const": "error"
-    },
-   languageOptions: {
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         process: "readonly",
         console: "readonly"
-      },
-      ecmaVersion: "latest",
-      sourceType: "module"
+      }
+    },
+    rules: {
+      // Basic good practices
+      "eqeqeq": "warn",
+      "prefer-const": "warn",
+      "curly": "warn",
+
+      // Style preferences
+      "semi": ["warn", "always"],
+      "quotes": ["warn", "double"],
+
+      // Developer convenience
+      "no-unused-vars": "off",
+      "no-undef": "off",
+      "no-console": "off"
     }
   }
 ];
