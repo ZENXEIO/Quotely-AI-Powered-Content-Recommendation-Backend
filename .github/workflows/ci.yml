@@ -44,10 +44,5 @@ jobs:
 
       - name: Echo CI success
         run: echo "All checks passed! Ready for deployment."
-deploy:
-    needs: build-and-lint
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Trigger Render Deploy
-        # run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+
+        

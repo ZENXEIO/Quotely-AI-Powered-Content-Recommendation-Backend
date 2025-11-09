@@ -16,7 +16,7 @@ Future updates will include AI-powered features like auto-tagging, summarization
   ```bash
   npm install
 
-3. Start the development server
+3. Start the development server on
    ```bash
    npm run dev
 
