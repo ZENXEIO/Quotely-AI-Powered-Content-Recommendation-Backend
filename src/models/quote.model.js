@@ -19,7 +19,7 @@ const QuoteDataSchema = new Schema(
       required: [true, "author is required"],
     },
 
-    tags: [string],
+    tags: [String],
   },
   { timestamps: true }
 );
