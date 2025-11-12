@@ -4,12 +4,6 @@ import { APIResponse } from "../utils/APIResponse.js";
 import { User } from "../models/user.models.js";
 
 const UserRegister = asyncHandeler(async (req, res) => {
-  // username,password email will be taken from frontend
-  // validate if each of the field is given or not
-  // validate if user already exists
-  // create user
-  // create response by removing password and refreshToken
-  // send response
 
   const { username, email, password, confirmpassword } = req.body;
 
