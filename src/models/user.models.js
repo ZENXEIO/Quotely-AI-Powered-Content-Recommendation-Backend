@@ -24,13 +24,18 @@ const UserSchema = new Schema(
       lowercase: true,
       trim: true,
     },
+
+    refreshToken: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
 
-
 UserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {return next();}
+  if (!this.isModified("password")) {
+    return next();
+  }
   this.password = await bcrypt.hash(this.password, 12);
   next();
 });
@@ -57,4 +62,4 @@ UserSchema.methods.generateRefreshToken = function () {
   });
 };
 
-export const User = mongoose.model("User", UserSchema);
+export const User = mongoose.model("user", UserSchema);

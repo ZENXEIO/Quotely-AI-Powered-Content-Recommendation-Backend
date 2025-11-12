@@ -1,15 +1,8 @@
-import { json, Router } from "express";
+import { Router } from "express";
+import { UserRegister } from "../controllers/user.controller.js";
 
-const router = Router()
+const router = Router();
 
-router.route('/registered').get((req, res)=>{
-    res.send('Welcome to backend');
-})
+router.route("/user/register").post(UserRegister);
 
-router.route('/registered').post(async (req,res)=>{
-    const val = await req.body;
-
-    res.json('Hello')
-})
-
-export default router
+export default router;
