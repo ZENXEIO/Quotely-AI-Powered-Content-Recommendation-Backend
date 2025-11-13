@@ -44,10 +44,10 @@ UserSchema.methods.checkUserPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-UserSchema.methods.generateToken = function () {
+UserSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
-      id: this._id,
+      _id: this._id,
       username: this.username,
       email: this.email,
     },
@@ -57,7 +57,7 @@ UserSchema.methods.generateToken = function () {
 };
 
 UserSchema.methods.generateRefreshToken = function () {
-  return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN, {
+  return jwt.sign({ _id: this._id }, process.env.REFRESH_TOKEN, {
     expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
   });
 };
